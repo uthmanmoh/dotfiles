@@ -84,32 +84,4 @@ obsidian() {
   echo "Successfully copied obsidian config to .obsidian"
 }
 
-# ctrl + l to replace right arrow key
-# bindkey '^L' vi-forward-char        # for vi-mode
-bindkey -M viins '^L' vi-forward-char # for zsh-vi-mode
-
-bindkey -v '^?' backward-delete-char # use vim keybindings in zsh
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] || [[ ${KEYMAP} == viopp ]]; then
-    echo -ne '\e[1 q'  # Block cursor for normal mode
-  else
-    echo -ne '\e[5 q'  # Beam cursor for insert mode
-  fi
-}
-zle -N zle-keymap-select
-
-# This ensures the cursor shape is updated immediately after a command is run.
-function zshreset {
-  zle && zle .reset-prompt
-}
-precmd_functions+=('zshreset')
-
-# Ensure cursor shape is correct when shell starts
-echo -ne '\e[5 q'  # Beam cursor
-
-# Reset cursor to block shape on exit
-function zshexit {
-  echo -ne '\e[1 q'
-}
+bindkey -M viins '^L' vi-forward-char # ctrl + l to replace right arrow key (useful in vi mode)

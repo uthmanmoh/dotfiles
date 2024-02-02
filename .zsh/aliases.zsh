@@ -15,10 +15,18 @@ alias grep="grep --color=auto -i"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias tree="eza --tree --level=3 --icons --git --git-ignore -A --sort=modified"
 
+alias vi="nvim"
+
+alias jq="jaq"
 alias sz="source ~/.zshrc"
 
-alias tree="eza --tree --level=3 --icons --git --git-ignore -A --sort=modified"
+alias battery="system_profiler SPPowerDataType | grep Cycle"
+
+export NEOVIM_CONFIG=~/.config/nvim
+
+bindkey -M viins '^L' vi-forward-char # ctrl + l to replace right arrow key (useful in vi mode)
 
 f() {
     local selection
@@ -35,16 +43,9 @@ f() {
     fi
 }
 
-alias battery="system_profiler SPPowerDataType | grep Cycle"
-
 len() {
     local concatenated_string="$*"
     echo ${#concatenated_string}
-}
-
-vi() {
-  nvim "$@"
-  echo -ne "\e[5 q" # change cursor back to vertical after exiting nvim since it will be in insert mode
 }
 
 term() {
@@ -57,25 +58,8 @@ term() {
   fi
 }
 
-export NEOVIM_CONFIG=~/.config/nvim
-
-alias jq="jaq"
-
-# for lazygit
-if [[ -n $NVIM_LISTEN_ADDRESS ]]; then
-  alias nvim="nvr -cc split --remote-wait +'set bufhidden=delete'"
-fi
-
-if [[ -n $NVIM_LISTEN_ADDRESS ]]; then
-  export VISUAL="nvr -cc split --remote-wait +'set bufhidden=delete'"
-  export EDITOR="nvr -cc split --remote-wait +'set bufhidden=delete'"
-else
-  export VISUAL="nvim"
-  export EDITOR="nvim"
-fi
-
+# Create a new obsidian "vault" by copying a base obsidian config
 obsidian() {
-  # check if .obsidian exists
   if [[ -d .obsidian ]]; then
     echo "Obsidian folder already exists"
     return 1
@@ -83,5 +67,3 @@ obsidian() {
   cp -r ~/.config/obsidian/ ./.obsidian
   echo "Successfully copied obsidian config to .obsidian"
 }
-
-bindkey -M viins '^L' vi-forward-char # ctrl + l to replace right arrow key (useful in vi mode)

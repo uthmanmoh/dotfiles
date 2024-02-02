@@ -35,3 +35,18 @@ alias cat='bat --style=plain'
 
 # Haskell
 [ -f "/Users/uthmanmohamed/.ghcup/env" ] && source "/Users/uthmanmohamed/.ghcup/env" # ghcup-env
+
+# for lazygit
+if [[ -n $NVIM_LISTEN_ADDRESS ]]; then
+  alias nvim="nvr -cc split --remote-wait +'set bufhidden=delete'"
+fi
+
+if [[ -n $NVIM_LISTEN_ADDRESS ]]; then
+  export VISUAL="nvr -cc split --remote-wait +'set bufhidden=delete'"
+  export EDITOR="nvr -cc split --remote-wait +'set bufhidden=delete'"
+else
+  export VISUAL="nvim"
+  export EDITOR="nvim"
+fi
+
+

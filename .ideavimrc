@@ -1,0 +1,58 @@
+""" https://gist.github.com/AlexPl292/50a3ff4cef1badcbb23436b22cbd3cf4
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'tpope/vim-surround'           " ys, cs, ds, S
+Plug 'tpope/vim-commentary'         " [count]gc{motion}, o_gc, v_gc, gcc
+Plug 'vim-scripts/argtextobj.vim'   " argument text objects: aa, ia
+Plug 'kana/vim-textobj-entire'      " entire buffer text object: ae
+Plug "preservim/nerdtree"           " Let's you use vim shortcuts in the file tree
+" Trying the new syntax
+Plug 'machakann/vim-highlightedyank'
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+" <C-n> seems to me as a better solution than <M-n>,
+" but we should finally support vim-visual-multi because vim-multiple-cursors is deprecated now
+map <C-n> <Plug>NextWholeOccurrence
+
+""" Common settings -------------------------
+set incsearch
+set number relativenumber
+set clipboard+=unnamedplus
+
+""" Idea specific settings ------------------
+" Smart join for <C-J>
+set ideajoin
+set ideastatusicon=gray
+
+""" My Mappings -----------------------------
+" map <leader>d <Action>(Debug)
+" map <leader>c <Action>(Stop)
+" map <leader>z <Action>(ToggleDistractionFreeMode)
+"
+" map <leader>s <Action>(SelectInProjectView)
+" map <leader>a <Action>(Annotate)
+" map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
+
+map <leader>cr <Action>(RenameElement)
+map <leader>cf <Action>(ReformatCode)
+map <leader><Space> <Action>(GotoFile)
+map <leader>sg <Action>(FindInPath)
+map H <Action>(PreviousTab)<CR>
+map L <Action>(NextTab)<CR>
+map <leader>ca <Action>(ShowIntentionActions)
+
+" map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>ss <Action>(FileStructurePopup)
+map <leader>r <Action>(RunClass)
+
+vmap J :m '>+1<CR>gv=gv
+vmap K :m '<-2<CR>gv=gv
+
+nmap <leader>e :NERDTreeToggle<CR>
+
+" TODO: https://github.com/q843705423/ideavimrc/blob/master/.ideavimrc

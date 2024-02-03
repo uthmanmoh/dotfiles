@@ -49,4 +49,3 @@ else
   export EDITOR="nvim"
 fi
 
-

@@ -1,0 +1,34 @@
+# Directories
+node_modules/
+.git/
+vendor/
+__pycache__/
+.idea/
+.vscode/
+build/
+dist/
+out/
+tmp/
+temp/
+Library/
+System/
+
+# File types
+*.log
+*.swp
+*.swo
+*.bak
+*.backup
+*.o
+*.obj
+*.exe
+*.out
+*.DS_Store
+*.pyc
+*.pyo
+*.class
+*.tmp
+*.temp
+Thumbs.db
+.Spotlight-V100
+

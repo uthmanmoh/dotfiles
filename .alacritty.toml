@@ -152,3 +152,6 @@ bindings = [
   { key = "O", mode = "Vi|~Search", action = "ScrollToBottom" },
   { key = "Escape", mods = "Command", mode = "~Search", action = "ToggleViMode" },
 ]
+
+[env]
+TERM = "xterm-256color"

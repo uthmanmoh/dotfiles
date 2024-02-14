@@ -20,6 +20,7 @@ alias vi="nvim"
 
 alias jq="jaq"
 alias sz="source ~/.zshrc"
+alias r="omz reload"
 
 alias battery="system_profiler SPPowerDataType | grep Cycle"
 

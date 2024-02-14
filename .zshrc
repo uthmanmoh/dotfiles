@@ -91,7 +91,7 @@ zstyle ':omz:plugins:nvm' lazy yes
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.zshrc.pre-oh-my-zsh
+[ -f ~/.zsh/settings.zsh ] && source ~/.zsh/settings.zsh
 
 # User configuration
 

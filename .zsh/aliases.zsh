@@ -16,13 +16,16 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tree="eza --tree --level=3 --icons --git --git-ignore -A --sort=modified"
-
 alias vi="nvim"
 
 alias jq="jaq"
 alias sz="source ~/.zshrc"
 
 alias battery="system_profiler SPPowerDataType | grep Cycle"
+
+alias ai="gh copilot suggest -t shell"
+
+eval "$(zoxide init --cmd cd zsh)"
 
 export NEOVIM_CONFIG=~/.config/nvim
 

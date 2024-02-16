@@ -53,3 +53,5 @@
   helper = store
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true # Remember merge resolutions and reuse them if the same files are merged later

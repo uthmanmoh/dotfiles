@@ -82,6 +82,7 @@ plugins=(
   zsh-autosuggestions 
   zsh-syntax-highlighting 
   zsh-vi-mode
+  yarn
 )
 
 # Skip all plugin aliases

@@ -54,3 +54,11 @@ obsidian() {
   cp -r ~/.config/obsidian/ ./.obsidian
   echo "Successfully copied obsidian config to .obsidian"
 }
+
+# Remove all neovim swap files
+swapclean() {
+  SWAP_DIR=~/.local/state/nvim/swap
+  echo "Removing swap files..."
+  fd -I --type f --glob "*.swp" $SWAP_DIR -x sh -c 'echo {} && rm {}'
+  echo "Done"
+}

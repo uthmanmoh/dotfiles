@@ -20,7 +20,7 @@ alias battery="system_profiler SPPowerDataType | grep Cycle"
 
 alias ai="gh copilot suggest -t shell"
 
-alias tm="~/dotfiles/scripts/main.sh"
+alias main="~/dotfiles/scripts/main.sh"
 
 # alias cd to use zoxide github.com/ajeetdsouza/zoxide
 eval "$(zoxide init --cmd cd zsh)"

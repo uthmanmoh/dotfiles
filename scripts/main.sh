@@ -30,12 +30,12 @@ for i in "${!directories[@]}"; do
 	# For the first directory, rename the initial window rather than creating a new one
 	if [ $i -eq 0 ]; then
 		tmux rename-window -t $session_name:1 "$(basename -- "$dir")"
-		tmux send-keys -t $session_name:1 "cd $dir" C-m
+		tmux send-keys -t $session_name:1 "cd $dir && clear" C-m
 	else
 		# Create a new window for each directory
 		tmux new-window -t $session_name -n "$(basename -- "$dir")"
 		# Send command to cd into the directory and press Enter
-		tmux send-keys -t $session_name:$((i + 1)) "cd $dir" C-m
+		tmux send-keys -t $session_name:$((i + 1)) "cd $dir && clear" C-m
 	fi
 done
 

@@ -8,22 +8,27 @@ gui:
   expandFocusedSidePanel: false
   mainPanelSplitMode: "flexible" # one of 'horizontal' | 'flexible' | 'vertical'
   language: "auto" # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl'
-  # theme:
-  #   activeBorderColor:
-  #     - magenta
-  #     - bold
-  #   inactiveBorderColor:
-  #     - white
-  #   optionsTextColor:
-  #     - black
-  #   selectedLineBgColor:
-  #     - magenta
-  #   cherryPickedCommitBgColor:
-  #     - blue
-  #   cherryPickedCommitFgColor:
-  #     - cyan
-  #   unstagedChangesColor:
-  #     - white
+  # Catppuccin theme: https://github.com/catppuccin/lazygit/blob/main/themes/macchiato/blue.yml
+  theme:
+    activeBorderColor:
+      - "#8aadf4"
+      - bold
+    inactiveBorderColor:
+      - "#a5adcb"
+    optionsTextColor:
+      - "#8aadf4"
+    selectedLineBgColor:
+      - "#363a4f"
+    cherryPickedCommitBgColor:
+      - "#494d64"
+    cherryPickedCommitFgColor:
+      - "#8aadf4"
+    unstagedChangesColor:
+      - "#ed8796"
+    defaultFgColor:
+      - "#cad3f5"
+    searchingActiveBorderColor:
+      - "#eed49f"
   commitLength:
     show: true
   mouseEvents: true
@@ -35,8 +40,6 @@ gui:
   showCommandLog: false
   showBottomLine: false
   commandLogSize: 8
-  authorColors: # in case you're not happy with the randomly assigned colour
-    "1239uth": "#9db5bf"
 git:
   paging:
     useConfig: false

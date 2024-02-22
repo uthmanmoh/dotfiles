@@ -4,7 +4,9 @@ This is a collection of my dotfiles - configuration files for various tools and 
 
 I use a Mac with [iTerm2](https://iterm2.com/) and [oh-my-zsh](https://ohmyz.sh/), configured with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
 
-You can find my neovim configuration here: [github.com/1239uth/nvim](github.com/1239uth/nvim)
+![Alacritty Setup](assets/AlacrittySetup.png)
+
+You can find my neovim configuration here: [github.com/1239uth/nvim](https://github.com/1239uth/nvim)
 
 ## How I setup my Dotfiles
 

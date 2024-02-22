@@ -1,0 +1,11 @@
+\.git
+\.gitignore
+
+^/README.*
+
+.lazygit-config.yml # ignore this since the symlink was setup manually and not using `stow`
+
+scripts
+assets
+
+catppuccin-mocha.toml

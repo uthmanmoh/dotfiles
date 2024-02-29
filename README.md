@@ -2,11 +2,18 @@
 
 This is a collection of my dotfiles - configuration files for various tools and programs I use, such as `zsh`, `git`, etc.
 
-I use a Mac with [iTerm2](https://iterm2.com/) and [oh-my-zsh](https://ohmyz.sh/), configured with the [Powerlevel10k](https://github.com/romkatv/powerlevel10k) theme.
+My terminal setup includes:
+- [Alacritty](https://alacritty.org) as my terminal emulator
+- [Neovim](https://neovim.io) as my IDE (see my neovim configuration at [github.com/uthmanmoh/nvim](https://github.com/uthmanmoh/nvim))
+- [oh-my-zsh](https://ohmyz.sh/) as my shell
+- [Tmux](https://github.com/tmux/tmux) as my terminal session manager
+- [Catppuccin](https://github.com/catppuccin) as my color scheme for Alacritty, Tmux, and Neovim
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) as my zsh theme
 
+Here is a preview of my terminal setup:
 ![Alacritty Setup](assets/AlacrittySetup.png)
 
-You can find my neovim configuration here: [github.com/1239uth/nvim](https://github.com/1239uth/nvim)
+You can find my neovim configuration here: [github.com/uthmanmo/nvim](https://github.com/uthmanmoh/nvim)
 
 ## How I setup my Dotfiles
 
@@ -14,36 +21,15 @@ I use [GNU Stow](https://www.gnu.org/software/stow/) to manage my dotfiles. It's
 
 See this video for an explanation of how you can setup your dotfiles using `stow`: [https://youtu.be/y6XCebnB9gs](https://youtu.be/y6XCebnB9gs)
 
-## Tools I use
+## Additional CLI Tools I use
 
-```sh
-# github.com/junegunn/fzf
-brew install fzf # Fuzzy finder
+Note: You can install all of these tools using `brew` on macOS:
 
-# github.com/BurntSushi/ripgrep
-brew install ripgrep # Faster grep
-
-# github.com/sharkdp/fd
-brew install fd # Faster find
-
-# github.com/sharkdp/bat
-brew install bat # Better cat with syntax highlighting (see bat.zsh for configurations)
-
-# github.com/eza-community/eza
-brew install eza # Better ls, specifically for the tree view
-
-# github.com/ajeetdsouza/zoxide
-brew install zoxide # A smarter cd command
-
-# github.com/jesseduffield/lazygit
-brew install lazygit # A simple terminal UI for git commands
-
-# github.com/dandavison/delta
-brew install git-delta # A better git diff (see gitconfig for configurations)
-
-# github.com/neovim/neovim
-brew install neovim # See my neovim configuration at github.com/1239uth/nvim
-
-# github.com/tmux/tmux
-brew install tmux # See my tmux configuration in .tmux.conf
-```
+- [fzf](https://github.com/junegunn/fzf) - Fuzzy finder
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - Faster `grep`
+- [fd](https://github.com/sharkdp/fd) - Faster `find`
+- [bat](https://github.com/sharkdp/bat) - Better `cat` with syntax highlighting
+- [eza](https://github.com/eza-community/eza) - Better `ls,` specifically for the tree view
+- [zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter `cd` command
+- [lazygit](https://github.com/jesseduffield/lazygit) - A simple terminal UI for git commands
+- [delta](https://github.com/dandavison/delta) - A better git diff (see my `.gitconfig` for how I use it)

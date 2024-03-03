@@ -1,0 +1,37 @@
+#!/bin/bash
+
+SHARED_OBSIDIAN_CONFIG="$HOME/dotfiles/.obsidian"
+VAULT_DIR=$(pwd)
+OBSIDIAN_DIR="$VAULT_DIR/.obsidian"
+
+# Check if .obsidian directory already exists
+if [ -d "$OBSIDIAN_DIR" ]; then
+	echo "Error: .obsidian directory already exists in the current directory."
+	exit 1
+fi
+
+# Create a .obsidian directory in the current vault directory
+mkdir -p "$OBSIDIAN_DIR"
+
+# Use fd to symlink all files and directories from the shared config to the vault's .obsidian
+fd . "$SHARED_OBSIDIAN_CONFIG" --max-depth 1 -X bash -c '
+for item; do
+  # Skip if item is the symlink destination itself, this prevents self-referencing
+  if [[ "$(basename "$item")" = ".obsidian" ]]; then
+    continue
+  fi
+
+  dest="$1/$(basename "$item")" # $1 is the first argument passed to the script, which is $OBSIDIAN_DIR
+
+    # Check if the destination link or file already exists to avoid overwriting
+    if [ ! -e "$dest" ]; then
+      ln -s "$item" "$dest"
+      echo "Symlinked $item to $dest"
+    else
+      echo "Warning: $dest already exists. Skipping symlink."
+    fi
+  done
+' bash "$OBSIDIAN_DIR" {}
+
+echo
+echo "Symlinking complete. You can now use the shared Obsidian config in this vault."

@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=/usr/local/opt/ruby/bin:$PATH # Homebrew Ruby before system Ruby
+export PATH=$PATH:$HOME/dotfiles/scripts/bin
 
 export JAVA_PATH=$(/usr/libexec/java_home)
 

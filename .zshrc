@@ -92,7 +92,7 @@ zstyle ':omz:plugins:nvm' lazy yes
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.zsh/settings.zsh ] && source ~/.zsh/settings.zsh
+[ -f ~/.zsh/rc.zsh ] && source ~/.zsh/rc.zsh
 
 # User configuration
 

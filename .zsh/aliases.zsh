@@ -45,16 +45,6 @@ f() {
     fi
 }
 
-# Create a new obsidian "vault" by copying a base obsidian config
-obsidian() {
-  if [[ -d .obsidian ]]; then
-    echo "Obsidian folder already exists"
-    return 1
-  fi
-  cp -r ~/.config/obsidian/ ./.obsidian
-  echo "Successfully copied obsidian config to .obsidian"
-}
-
 # Remove all neovim swap files
 swapclean() {
   SWAP_DIR=~/.local/state/nvim/swap

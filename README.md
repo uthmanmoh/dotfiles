@@ -13,8 +13,6 @@ My terminal setup includes:
 Here is a preview of my terminal setup:
 ![Alacritty Setup](assets/AlacrittySetup.png)
 
-You can find my neovim configuration here: [github.com/uthmanmo/nvim](https://github.com/uthmanmoh/nvim)
-
 ## How I setup my Dotfiles
 
 I use [GNU Stow](https://www.gnu.org/software/stow/) to manage my dotfiles. It's a simple symlink manager that allows me to keep my dotfiles in a separate directory and symlink them into `$HOME` to behave like normal.

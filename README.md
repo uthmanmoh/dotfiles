@@ -31,8 +31,3 @@ Note: You can install all of these tools using `brew` on macOS:
 - [zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter `cd` command
 - [lazygit](https://github.com/jesseduffield/lazygit) - A simple terminal UI for git commands
 - [delta](https://github.com/dandavison/delta) - A better git diff (see my `.gitconfig` for how I use it)
-
-### Note on Obsidian
-I use [Obsidian](https://obsidian.md) for note-taking. My global obsidian configuration is in the `.obsidian` directory.
-
-You can download my obsidian configuration from this url: [https://downgit.evecalm.com/#/home?url=https://github.com/uthmanmoh/dotfiles/tree/main/.dotfiles](https://downgit.evecalm.com/#/home?url=https://github.com/uthmanmoh/dotfiles/tree/main/.dotfiles)

@@ -1,8 +1,15 @@
 {
+  "enabledCssSnippets": [
+    "obsidian-pagebreaks",
+    "styles"
+  ],
   "accentColor": "",
-  "theme": "obsidian",
   "cssTheme": "Catppuccin",
-  "baseFontSize": 16,
+  "interfaceFontFamily": "",
   "textFontFamily": "Avenir",
-  "interfaceFontFamily": "Avenir"
+  "showViewHeader": true,
+  "nativeMenus": true,
+  "theme": "system",
+  "translucency": false,
+  "baseFontSize": 16
 }

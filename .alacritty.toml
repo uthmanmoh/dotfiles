@@ -68,6 +68,11 @@ bindings = [
   { key = "O", mode = "Vi|~Search", action = "ToggleViMode" },
   { key = "O", mode = "Vi|~Search", action = "ScrollToBottom" },
   { key = "Escape", mods = "Command", mode = "~Search", action = "ToggleViMode" },
+
+  # Map Option+Backspace to <C-w> (delete word)
+  { key = "Backspace", mods = "Option", chars = "\u0017" },
+  # Map Command+Backspace to <C-u> (clear line)
+  { key = "Backspace", mods = "Command", chars = "\u0015" },
 ]
 
 [env]

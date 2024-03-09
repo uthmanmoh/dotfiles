@@ -32,8 +32,7 @@ bindkey -M viins '¬' vi-forward-char # option + l to replace right arrow key (t
 # Use fzf to find files from ~ and cd into the directory of the selected file
 f() {
     local selection
-    export FZF_DEFAULT_COMMAND="fd --type f --type d"
-    selection=$(cd ~; fzf --preview 'ls -1 {}' --preview-window=up:3:wrap)
+    selection=$(cd && FZF_DEFAULT_COMMAND="fd --type f --type d" fzf --preview 'ls -1 {}' --preview-window=up:3:wrap)
     if [[ -n $selection ]]; then
         # Prepend the home directory path if the selection is not an absolute path
         [[ $selection != /* ]] && selection="$HOME/$selection"

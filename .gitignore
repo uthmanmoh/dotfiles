@@ -1,0 +1,37 @@
+.DS_Store
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Python
+venv
+__pycache__
+
+# Typescript
+node_modules
+build
+dist
+
+# Java
+*.class
+*.jar
+
+.obsidian
+
+.git
+
+.idea
+.vscode
+
+# LaTeX Files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls

@@ -13,5 +13,6 @@
   "showUnsupportedFiles": false,
   "defaultViewMode": "source",
   "promptDelete": false,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "showLineNumber": false
 }

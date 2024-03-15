@@ -1,4 +1,5 @@
 \.git
+git-commit-template.txt
 
 ^/README.*
 

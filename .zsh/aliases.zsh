@@ -10,7 +10,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tree="eza --tree --level=3 --icons --git --git-ignore -A --sort=modified"
-alias vi="nvim"
+
 alias jq="jaq"
 
 alias sz="source ~/.zshrc"
@@ -21,6 +21,13 @@ alias battery="system_profiler SPPowerDataType | grep Cycle"
 alias ai="gh copilot suggest -t shell"
 
 alias main="~/dotfiles/scripts/main.sh"
+
+# If nightly neovim is installed, use it, otherwise use default
+if [ -f ~/.local/nvim-macos/bin/nvim ]; then
+  alias vi="~/.local/nvim-macos/bin/nvim"
+else
+  alias vi="nvim"
+fi
 
 # alias cd to use zoxide github.com/ajeetdsouza/zoxide
 eval "$(zoxide init --cmd cd zsh)"

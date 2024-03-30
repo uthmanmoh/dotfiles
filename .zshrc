@@ -83,6 +83,8 @@ plugins=(
   zsh-syntax-highlighting 
   zsh-vi-mode
   yarn
+  docker
+  docker-compose
 )
 
 # Skip all plugin aliases

@@ -20,11 +20,11 @@ alias battery="system_profiler SPPowerDataType | grep Cycle"
 
 alias ai="gh copilot suggest -t shell"
 
-alias main="~/dotfiles/scripts/main.sh"
+alias main="~/dotfiles/scripts/bin/main"
 
 # If nightly neovim is installed, use it, otherwise use default
-if [ -f ~/.local/nvim-macos/bin/nvim ]; then
-  alias vi="~/.local/nvim-macos/bin/nvim"
+if [ -f ~/.local/nvim-macos-x86_64/bin/nvim ]; then
+  alias vi="~/.local/nvim-macos-x86_64/bin/nvim"
 else
   alias vi="nvim"
 fi

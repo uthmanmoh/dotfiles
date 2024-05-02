@@ -7,7 +7,7 @@ if [ -n "$TMUX" ]; then
 fi
 
 # Define a list of directories you want to cd into for each window
-directories=("~/.config/nvim" "~/dotfiles" "~/Documents/Obsidian Vault" "~/Documents/SchoolWork/Year4Sem1")
+directories=("~/.config/nvim" "~/dotfiles" "~/Documents/Obsidian Vault" "~/Documents/SchoolWork/Year4Sem2")
 
 # Name of the tmux session
 session_name="main"

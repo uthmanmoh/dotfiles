@@ -11,8 +11,6 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias tree="eza --tree --level=3 --icons --git --git-ignore -A --sort=modified"
 
-alias jq="jaq"
-
 alias sz="source ~/.zshrc"
 alias r="omz reload"
 
@@ -21,6 +19,9 @@ alias battery="system_profiler SPPowerDataType | grep Cycle"
 alias ai="gh copilot suggest -t shell"
 
 alias main="~/dotfiles/scripts/bin/main"
+
+alias lg="lazygit"
+alias g="git"
 
 # If nightly neovim is installed, use it, otherwise use default
 if [ -f ~/.local/nvim-macos-x86_64/bin/nvim ]; then

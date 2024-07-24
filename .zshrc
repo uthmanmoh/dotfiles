@@ -77,8 +77,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   # vi-mode 
   fzf 
-  fd 
-  ripgrep 
   zsh-autosuggestions 
   zsh-syntax-highlighting 
   zsh-vi-mode

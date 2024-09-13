@@ -83,6 +83,7 @@ plugins=(
   yarn
   docker
   docker-compose
+  command-not-found
 )
 
 # Skip all plugin aliases

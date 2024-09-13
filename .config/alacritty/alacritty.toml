@@ -1,7 +1,7 @@
 # Default Config: https://github.com/azigler/dotfiles/blob/main/alacritty/alacritty.toml
 # Options: https://alacritty.org/config-alacritty.html
 
-import = ["~/dotfiles/catppuccin-mocha.toml"]
+import = ["~/dotfiles/alacritty-themes/dracula-plus-alacritty.toml"]
 
 [window]
 dynamic_padding = true

@@ -8,7 +8,7 @@
   smudge = git-lfs smudge -- %f
 [core]
   autocrlf = input
-  excludesfile = /Users/uthmanmohamed/.gitignore
+  excludesfile = ~/.gitignore
   editor = nvim
   # pager = delta --dark --syntax-theme base16-256 --diff-so-fancy --paging never --file-style="omit" 
   pager = delta
@@ -56,7 +56,7 @@
 [rerere]
 	enabled = true # Remember merge resolutions and reuse them if the same files are merged later
 [commit]
-	template = /Users/uthmanmohamed/.config/git/commit-template.txt
+	template = ~/.config/git/commit-template.txt
 [rebase]
 	autostash = true
 [pull]

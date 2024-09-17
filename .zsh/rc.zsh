@@ -21,4 +21,4 @@ fpath+=~/.zfunc
 # autoload -Uz compinit && compinit
 
 # Haskell
-[ -f "/Users/uthmanmohamed/.ghcup/env" ] && source "/Users/uthmanmohamed/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env

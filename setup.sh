@@ -84,6 +84,25 @@ if [[ ! -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
+# Install zsh-autosuggestions
+if [[ ! -d "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]]; then
+  yecho "zsh-autosuggestions not found, installing..."
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+# Install zsh-syntax-highlighting
+if [[ ! -d "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]]; then
+  yecho "zsh-syntax-highlighting not found, installing..."
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+fi
+
+# Install zsh-vi-mode
+if [[ ! -d "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-vi-mode" ]]; then
+  yecho "zsh-vi-mode not found, installing..."
+  git clone https://github.com/jeffreytse/zsh-vi-mode \
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
+fi
+
 # Install nvm (and node)
 if [[ ! -d ~/.nvm ]]; then
   yecho "nvm not found, installing..."

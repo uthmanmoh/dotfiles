@@ -13,13 +13,22 @@ My terminal setup includes:
 Here is a preview of my terminal setup:
 ![Alacritty Setup](assets/AlacrittySetup.png)
 
-## How I setup my Dotfiles
+## How to setup my dotfiles
 
-I use [GNU Stow](https://www.gnu.org/software/stow/) to manage my dotfiles. It's a simple symlink manager that allows me to keep my dotfiles in a separate directory and symlink them into `$HOME` to behave like normal.
+```bash
+cd ~ # start from the home directory
+git clone https://github.com/uthmanmoh/dotfiles.git
+cd dotfiles
+./setup.sh
+```
 
-See this video for an explanation of how you can setup your dotfiles using `stow`: [https://youtu.be/y6XCebnB9gs](https://youtu.be/y6XCebnB9gs)
+The `setup.sh` script will 
+1. Install all of my dependencies using `brew`
+2. Symlink all of my dotfiles to their appropriate directories
 
-## Additional CLI Tools I use
+This script is **idempotent** - i.e. You can run it even if tools are installed or partial dotfiles are setup and it will do nothing.
+
+## CLI Tools I use
 
 Note: You can install all of these tools using `brew` on macOS:
 
@@ -31,3 +40,4 @@ Note: You can install all of these tools using `brew` on macOS:
 - [zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter `cd` command
 - [lazygit](https://github.com/jesseduffield/lazygit) - A simple terminal UI for git commands
 - [delta](https://github.com/dandavison/delta) - A better git diff (see my `.gitconfig` for how I use it)
+- [karabiner](https://github.com/pqrs-org/Karabiner-Elements) - A keyboard customization tool

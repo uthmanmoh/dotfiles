@@ -1,0 +1,125 @@
+# Base configs taken from: https://gist.github.com/tsl0922/d79fc1f8097dde660b34
+# vim style tmux config
+
+# Change prefix from C-a
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+
+# Easy config reload
+bind-key r source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# set vi mode
+setw -g mode-keys vi
+
+# mouse behavior
+setw -g mouse on
+# scroll by 1 line
+bind-key -T copy-mode-vi WheelUpPane send-keys -X scroll-up
+bind-key -T copy-mode-vi WheelDownPane send-keys -X scroll-down
+
+# disable wrapping on search to make it less confusing when using ']'
+set-option -g wrap-search off
+
+# use `]` and `[` to jump to the next/previous prompt in copy mode
+bind -Tcopy-mode-vi [ send -X search-backward '' \; send-keys z
+bind -Tcopy-mode-vi ] send -X search-forward '' \; send-keys z
+
+set-option -g history-limit 10000
+
+# use vim-like keys for splits and windows
+bind-key v split-window -h -c '#{pane_current_path}' # use current path for new split
+bind-key s split-window -v -c '#{pane_current_path}'
+
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+bind-key L next-window
+bind-key H previous-window
+
+bind-key + select-layout main-horizontal
+bind-key = select-layout main-vertical
+
+set-window-option -g other-pane-height 25
+set-window-option -g other-pane-width 80
+set-window-option -g display-panes-time 1500
+
+bind-key a last-pane
+bind-key q display-panes
+bind-key c new-window
+
+bind-key [ copy-mode
+
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
+
+# Set window notifications
+setw -g monitor-activity on
+set -g visual-activity on
+set-option -g focus-events on
+
+# Allow the arrow key to be used immediately after changing windows
+set-option -g repeat-time 0
+
+# Fix neovim escape delay
+set -s escape-time 0
+
+bind-key x kill-pane # close current pane without confirmation
+bind-key X kill-pane -a # close all other panes
+
+# Fix neovim colors, from: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
+set -g default-terminal "tmux-256color"
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+# tpm plugin
+set -g @plugin 'tmux-plugins/tpm'
+
+# list of tmux plugins
+# set -g @plugin 'christoomey/vim-tmux-navigator' # for navigating panes and vim/nvim with Ctrl-hjkl
+
+# set -g @plugin 'jimeh/tmux-themepack' # to configure tmux theme
+# set -g @themepack 'powerline/default/cyan' # use this theme for tmux
+
+# set -g @plugin 'tmux-plugins/tmux-resurrect' # persist tmux sessions after computer restart
+# set -g @plugin 'tmux-plugins/tmux-continuum' # automatically saves sessions for you every 15 minutes
+
+# set -g @resurrect-capture-pane-contents 'on' # allow tmux-ressurect to capture pane contents
+# set -g @continuum-restore 'on' # enable tmux-continuum functionality
+
+set -g status-position top
+
+set -g @catppuccin_flavour 'mocha'
+set -g @plugin 'catppuccin/tmux'
+
+# Improve window path by applying the shell script ~/dotfiles/scripts/shorten_path.sh
+set -g @catppuccin_window_default_text "#(echo '#{pane_current_path}' | ~/.tmux/scripts/shorten_path.sh)"
+set -g @catppuccin_window_current_text "#[bold]#(echo '#{pane_current_path}' | ~/.tmux/scripts/shorten_path.sh)" # Add bold to the current window name
+
+# set -g @catppuccin_window_current_fill "all"
+# set -g @catppuccin_window_middle_separator "█ "
+# set -g @catppuccin_window_right_separator "█ "
+
+# # Highlight active window
+# set -g @catppuccin_window_right_separator "█ "
+# set -g @catppuccin_window_number_position "right"
+# set -g @catppuccin_window_middle_separator " | "
+#
+# set -g @catppuccin_window_default_fill "none"
+#
+# set -g @catppuccin_window_current_fill "all"
+
+# <prefix> <C-s> to save tmux session
+# <prefix> <C-r> to restore tmux session
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

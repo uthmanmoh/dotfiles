@@ -118,7 +118,7 @@ if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   tmux source-file ~/.tmux.conf
 fi
 
-HOME_FILES=".fdignore .gitconfig .ideavimrc .p10k.zsh .tmux.conf .scripts .zsh .zshrc"
+HOME_FILES=".fdignore .gitconfig .ideavimrc .p10k.zsh .tmux.conf .tmux.conf.local .scripts .zsh .zshrc"
 
 for file in $HOME_FILES; do
   linkdotfile "$file" "$HOME/$file"

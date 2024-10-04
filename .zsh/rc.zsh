@@ -12,12 +12,8 @@ export JAVA_HOME=$JAVA_PATH
 
 unsetopt share_history
 
-# TMUX Temp Fix
-TMUX_PROGRAM=/opt/homebrew/bin/tmux
-TMUX_CONF=$HOME/.tmux.conf
-TMUX_CONF_LOCAL=$HOME/.tmux.conf.local
-
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
+[ -f ~/.zsh/amazon.zsh ] && source ~/.zsh/amazon.zsh
 
 [ -f ~/.zsh/nvm.zsh ] && source ~/.zsh/nvm.zsh
 [ -f ~/.zsh/bat.zsh ] && source ~/.zsh/bat.zsh

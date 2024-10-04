@@ -118,13 +118,6 @@ if [[ ! -d ~/.nvm ]]; then
   nvm install --lts
 fi
 
-# Install tpm for tmux
-if [[ ! -d ~/.tmux/plugins/tpm ]]; then
-  yecho "tmux plugin manager not found, installing..."
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  tmux source-file ~/.tmux.conf
-fi
-
 HOME_FILES=".fdignore .gitconfig .ideavimrc .p10k.zsh .tmux.conf .tmux.conf.local .scripts .zsh .zshrc"
 
 for file in $HOME_FILES; do
@@ -138,3 +131,11 @@ linkdotfile .obsidian ~/.config/obsidian
 linkdotfile karabiner.json ~/.config/karabiner/karabiner.json
 linkdotfile .scripts/shorten_path.sh ~/.tmux/scripts/shorten_path.sh
 linkdotfile .lazygit-config.yml "$(lazygit -cd)/config.yml"
+
+# Install tpm for tmux
+#  need to do this after linking the dotfiles since tmux.conf depends on location
+if [[ ! -d ~/.tmux/plugins/tpm ]]; then
+  yecho "tmux plugin manager not found, installing..."
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  tmux source-file ~/.tmux.conf
+fi

@@ -1,6 +1,5 @@
 [user]
   name = Uthman Mohamed
-  email = 83053931+1239uth@users.noreply.github.com
 [filter "lfs"]
   process = git-lfs filter-process
   required = true

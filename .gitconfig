@@ -7,7 +7,7 @@
   smudge = git-lfs smudge -- %f
 [core]
   autocrlf = input
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.config/git/global-gitignore
   editor = nvim
   # pager = delta --dark --syntax-theme base16-256 --diff-so-fancy --paging never --file-style="omit" 
   pager = delta

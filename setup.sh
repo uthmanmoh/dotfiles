@@ -62,15 +62,19 @@ command -v zsh >/dev/null || recho "zsh not found, install before proceeding."
 # Make sure curl is installed
 command -v curl >/dev/null || recho "curl not found, install before proceeding."
 
+# Search font using `brew search font-` and from https://www.nerdfonts.com/font-downloads
 FONT="font-jetbrains-mono-nerd-font"
 install_brew $FONT
 
 # Install Homebrew main programs
-BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit neovim pngpaste ripgrep tmux zoxide"
+BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit neovim pngpaste ripgrep tldr tmux zoxide"
 
 for program in $BREW_PROGRAMS; do
   install_brew "$program"
 done
+
+# Setup Bat theme (using variable in .zsh/bat.sh)
+bat cache --build
 
 # Install oh-my-zsh if not installed
 if [[ ! -d ~/.oh-my-zsh ]]; then
@@ -130,4 +134,4 @@ linkdotfile .config/bat ~/.config/bat
 linkdotfile .obsidian ~/.config/obsidian
 linkdotfile karabiner.json ~/.config/karabiner/karabiner.json
 linkdotfile .scripts/shorten_path.sh ~/.tmux/scripts/shorten_path.sh
-linkdotfile .lazygit-config.yml "$HOME/Library/Application Support/lazygit/config.yml"
+linkdotfile .lazygit-config.yml "$(lazygit -cd)/config.yml"

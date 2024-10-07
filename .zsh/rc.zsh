@@ -15,7 +15,9 @@ unsetopt share_history
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
 [ -f ~/.zsh/amazon.zsh ] && source ~/.zsh/amazon.zsh
 
-[ -f ~/.zsh/nvm.zsh ] && source ~/.zsh/nvm.zsh
+# Set up mise for runtime management
+eval "$(mise activate zsh)"
+
 [ -f ~/.zsh/bat.zsh ] && source ~/.zsh/bat.zsh
 [ -f ~/.zsh/bun.zsh ] && source ~/.zsh/bun.zsh
 [ -f ~/.zsh/fzf.zsh ] && source ~/.zsh/fzf.zsh
@@ -26,3 +28,6 @@ fpath+=~/.zfunc
 
 # Haskell
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+# Setup homebrew
+eval "$($(brew --prefix)/bin/brew shellenv)"

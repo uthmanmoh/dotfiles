@@ -67,7 +67,7 @@ FONT="font-jetbrains-mono-nerd-font"
 install_brew $FONT
 
 # Install Homebrew main programs
-BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit neovim pngpaste ripgrep silicon tldr tmux zoxide"
+BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit mise neovim pngpaste ripgrep silicon tldr tmux zoxide"
 
 for program in $BREW_PROGRAMS; do
   install_brew "$program"
@@ -107,16 +107,8 @@ if [[ ! -d "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/plugins/zsh-vi-mode" ]]; th
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
 fi
 
-# Install nvm (and node)
-if [[ ! -d ~/.nvm ]]; then
-  yecho "nvm not found, installing..."
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-  # Setup nvm
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-  nvm install --lts
-fi
+# Install node
+mise use -g node@lts
 
 HOME_FILES=".fdignore .gitconfig .ideavimrc .p10k.zsh .tmux.conf .tmux.conf.local .scripts .zsh .zshrc"
 

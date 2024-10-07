@@ -80,7 +80,6 @@ plugins=(
   zsh-autosuggestions 
   zsh-syntax-highlighting 
   zsh-vi-mode
-  yarn
   docker
   docker-compose
   command-not-found
@@ -88,8 +87,6 @@ plugins=(
 
 # Skip all plugin aliases
 zstyle ':omz:plugins:*' aliases no
-
-zstyle ':omz:plugins:nvm' lazy yes
 
 source $ZSH/oh-my-zsh.sh
 

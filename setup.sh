@@ -67,7 +67,7 @@ FONT="font-jetbrains-mono-nerd-font"
 install_brew $FONT
 
 # Install Homebrew main programs
-BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit neovim pngpaste ripgrep tldr tmux zoxide"
+BREW_PROGRAMS="bat fd fzf gcc git git-delta lazygit neovim pngpaste ripgrep silicon tldr tmux zoxide"
 
 for program in $BREW_PROGRAMS; do
   install_brew "$program"

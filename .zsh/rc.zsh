@@ -11,6 +11,7 @@ export JAVA_PATH=$(/usr/libexec/java_home)
 export JAVA_HOME=$JAVA_PATH
 
 unsetopt share_history
+setopt inc_append_history
 
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
 [ -f ~/.zsh/amazon.zsh ] && source ~/.zsh/amazon.zsh

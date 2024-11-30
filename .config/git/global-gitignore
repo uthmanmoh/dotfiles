@@ -17,6 +17,10 @@ dist
 # Java
 *.class
 *.jar
+.classpath
+.factorypath
+.project
+.settings
 
 .obsidian
 

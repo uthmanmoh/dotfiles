@@ -33,7 +33,8 @@ fi
 # alias cd to use zoxide github.com/ajeetdsouza/zoxide
 eval "$(zoxide init --cmd cd zsh)"
 
-bindkey -M viins '^l' vi-forward-char # option + l to replace right arrow key (to accept autocomplete)
+bindkey -r '^L' # Remove ctrl-l to clear history
+bindkey -M viins '^L' vi-forward-char # ctrl + l to replace right arrow key (to accept autocomplete)
 
 # Use fzf to find files from ~ and cd into the directory of the selected file
 f() {

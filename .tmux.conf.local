@@ -393,6 +393,11 @@ tmux_conf_urlscan_options="--compact --dedupe"
 
 # this is the place to override or undo settings
 
+# Unbind keys defined in .tmux.conf
+unbind -T copy-mode-vi Escape
+unbind -T copy-mode-vi H
+unbind -T copy-mode-vi L
+
 # replace C-b by C-a instead of using both prefixes
 # set -gu prefix2
 unbind C-a
@@ -400,12 +405,21 @@ unbind C-b
 set -g prefix C-space
 bind C-space send-prefix
 
+# Use ctrl-] to enter copy-mode WITHOUT needing prefix key
+bind -n C-] copy-mode
+
+# Use <prefix>] to enter copy-mode (similar to shorcut above)
+bind-key ] copy-mode
+
+# Unbind ctrl-l to clear screen
+unbind-key -n C-l
+
 # Start windows and panes at 1, not 0
 set-window-option -g pane-base-index 1
 set-option -g renumber-windows on
 
 # increase history size
-set -g history-limit 10000
+set -g history-limit 50000
 
 # start with mouse mode enabled
 set -g mouse on

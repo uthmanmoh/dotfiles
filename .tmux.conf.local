@@ -509,6 +509,14 @@ tmux_conf_uninstall_plugins_on_reload=true
 set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-open'
+
+set -g @plugin 'omerxx/tmux-sessionx'
+set -g @sessionx-ls-command 'eza --color=always --tree --icons --level=2 --git --git-ignore -A --sort=modified'
+set -g @sessionx-filter-current 'false'
+set -g @sessionx-fzf-builtin-tmux 'on'
+
+set -g @sessionx-bind-window-mode 'ctrl-z' # Disable this so I can do option-backspace
+
 # set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 

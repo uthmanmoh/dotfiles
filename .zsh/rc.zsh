@@ -15,7 +15,6 @@ unsetopt share_history
 setopt inc_append_history
 
 [ -f ~/.zsh/aliases.zsh ] && source ~/.zsh/aliases.zsh
-[ -f ~/.zsh/amazon.zsh ] && source ~/.zsh/amazon.zsh
 
 # Set up mise for runtime management
 eval "$(mise activate zsh)"

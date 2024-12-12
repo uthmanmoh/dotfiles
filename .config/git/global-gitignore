@@ -22,6 +22,10 @@ dist
 .project
 .settings
 
+# Kotlin
+kls_database.db
+kotlinLspClasspath.sh
+
 .obsidian
 
 .git

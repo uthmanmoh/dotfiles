@@ -457,8 +457,8 @@ bind-key = select-layout main-vertical
 
 bind-key [ copy-mode
 
-bind-key x kill-pane # close current pane without confirmation
-bind-key X kill-pane -a # close all other panes
+bind-key q kill-pane # close current pane without confirmation
+bind-key Q kill-pane -a # close all other panes
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important

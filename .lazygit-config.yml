@@ -72,6 +72,8 @@ os:
   editPreset: "nvim"
   edit: "nvim {{filename}}"
   editAtLine: "nvim +{{line}} {{filename}}"
+  open: "lemonade open {{filename}}"
+  openLnk: "lemonade open {{link}}"
 refresher:
   refreshInterval: 10 # file/submodule refresh interval in seconds
   fetchInterval: 60 # re-fetch interval in seconds

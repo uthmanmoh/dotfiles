@@ -1,0 +1,18 @@
+gui:
+  theme:
+    activeBorderColor:
+      - "#8aadf4"
+      - bold
+    inactiveBorderColor:
+      - "#a5adcb"
+    optionsTextColor:
+      - "#8aadf4"
+    selectedLineBgColor:
+      - "#363a4f"
+  returnImmediately: true
+  # Determines whether we show the bottom line (the one containing keybinding
+  # info and the status of the app).
+  showBottomLine: false
+os:
+  openCommand: lemonade open {{filename}}
+  openLinkCommand: lemonade open {{link}}

@@ -22,6 +22,7 @@ alias main="~/dotfiles/scripts/bin/main"
 
 alias lg="lazygit"
 alias g="git"
+alias lzd="lazydocker"
 
 # If nightly neovim is installed, use it, otherwise use default
 if [ -f ~/.local/nvim-macos-x86_64/bin/nvim ]; then

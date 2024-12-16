@@ -67,7 +67,11 @@ FONT="font-jetbrains-mono-nerd-font"
 install_brew $FONT
 
 # Install Homebrew main programs
-BREW_PROGRAMS="bat fd fzf gcc git git-delta joshmedeski/sesh/sesh lazygit mise neovim pngpaste ripgrep silicon tldr tmux zoxide"
+BREW_PROGRAMS="bat fd fzf gcc git git-delta joshmedeski/sesh/sesh jesseduffield/lazydocker/lazydocker jesseduffield/lazygit/lazygit mise neovim ripgrep tldr tmux zoxide"
+if [[ "$(uname)" == "Darwin" ]]; then
+  # MacOS only
+  BREW_PROGRAMS+=" pngpaste silicon"
+fi
 
 for program in $BREW_PROGRAMS; do
   install_brew "$program"
@@ -123,6 +127,7 @@ linkdotfile .obsidian ~/.config/obsidian
 linkdotfile karabiner.json ~/.config/karabiner/karabiner.json
 linkdotfile .scripts/shorten_path.sh ~/.tmux/scripts/shorten_path.sh
 linkdotfile .lazygit-config.yml "$(lazygit -cd)/config.yml"
+linkdotfile .config/lazydocker ~/.config/lazydocker
 
 # Install tpm for tmux
 #  need to do this after linking the dotfiles since tmux.conf depends on location

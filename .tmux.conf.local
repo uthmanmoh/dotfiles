@@ -474,7 +474,7 @@ set -ag terminal-overrides ",xterm-256color:RGB"
 
 bind-key "T" run-shell "sesh connect \"$(
   sesh list -ct -H --icons | fzf-tmux -p 55%,60% \
-    --no-sort -i --ansi --border-label ' sesh ' --prompt '⚡  ' \
+    -i --ansi --reverse --border-label ' sesh ' --prompt '⚡  ' \
     --header '  ^a all  ^s sessions  ^f packages  ^d workspaces  ^g sesh  ^x kill-session' \
     --bind 'tab:down,btab:up' \
     --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \

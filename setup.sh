@@ -26,12 +26,23 @@ function recho {
   exit 1
 }
 
+function is_mac() {
+  [[ "$(uname)" == "Darwin" ]]
+}
+
 ## install functions ##
 
 # If program is not installed using brew, run brew install on it
 function install_brew {
-  (brew list | grep -q "^$1$" >/dev/null && gecho "$1 found...") ||
-    (yecho "$1 not found, installing via homebrew..." && brew install $1)
+  local package_name="$1"
+  local short_name="${package_name##*/}"
+
+  if brew list | grep -q "^${short_name}$" >/dev/null; then
+    gecho "$package_name is already installed"
+  else
+    yecho "$package_name not found, installing via homebrew..."
+    brew install "$package_name"
+  fi
 }
 
 # function for linking dotfiles
@@ -62,15 +73,12 @@ command -v zsh >/dev/null || recho "zsh not found, install before proceeding."
 # Make sure curl is installed
 command -v curl >/dev/null || recho "curl not found, install before proceeding."
 
-# Search font using `brew search font-` and from https://www.nerdfonts.com/font-downloads
-FONT="font-jetbrains-mono-nerd-font"
-install_brew $FONT
-
 # Install Homebrew main programs
 BREW_PROGRAMS="bat fd fzf gcc git git-delta joshmedeski/sesh/sesh jesseduffield/lazydocker/lazydocker jesseduffield/lazygit/lazygit mise neovim ripgrep tldr tmux zoxide"
-if [[ "$(uname)" == "Darwin" ]]; then
+if is_mac; then
   # MacOS only
-  BREW_PROGRAMS+=" pngpaste silicon"
+  BREW_PROGRAMS+=" pngpaste silicon font-jetbrains-mono-nerd-font"
+  # Search font using `brew search font-` and from https://www.nerdfonts.com/font-downloads
 fi
 
 for program in $BREW_PROGRAMS; do

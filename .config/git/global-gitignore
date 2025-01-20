@@ -1,3 +1,5 @@
+.env
+
 .DS_Store
 
 # Elastic Beanstalk Files
@@ -8,6 +10,7 @@
 # Python
 venv
 __pycache__
+pyrightconfig.json
 
 # Typescript
 node_modules

@@ -131,6 +131,7 @@ done
 linkdotfile .config/alacritty ~/.config/alacritty
 linkdotfile .config/git ~/.config/git
 linkdotfile .config/bat ~/.config/bat
+linkdotfile .config/sesh ~/.config/sesh
 linkdotfile .obsidian ~/.config/obsidian
 linkdotfile karabiner.json ~/.config/karabiner/karabiner.json
 linkdotfile .scripts/shorten_path.sh ~/.tmux/scripts/shorten_path.sh

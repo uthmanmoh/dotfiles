@@ -411,6 +411,9 @@ bind -n C-] copy-mode
 # Use <prefix>] to enter copy-mode (similar to shorcut above)
 bind-key ] copy-mode
 
+# Use esc to stop selecting
+bind-key -T copy-mode-vi Escape send-keys -X clear-selection
+
 # Unbind ctrl-l to clear screen
 unbind-key -n C-l
 

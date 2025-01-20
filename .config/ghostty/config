@@ -1,0 +1,25 @@
+# Use cmd+shift+, to reload config
+
+window-height = 50
+window-width = 200
+
+font-family = JetBrainsMonoNL Nerd Font Mono
+font-size = 15
+theme = Dracula+
+background-opacity = 0.95
+
+macos-option-as-alt = true
+
+# make hidden to remove the bar
+macos-titlebar-style = hidden
+
+quit-after-last-window-closed = true
+confirm-close-surface = false
+
+# ctrl-u
+keybind = cmd+backspace=text:\x15
+# ctrl-w
+keybind = option+backspace=text:\x17
+
+# ctrl-space T
+keybind = cmd+t=text:\x00T

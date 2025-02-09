@@ -74,7 +74,7 @@ command -v zsh >/dev/null || recho "zsh not found, install before proceeding."
 command -v curl >/dev/null || recho "curl not found, install before proceeding."
 
 # Install Homebrew main programs
-BREW_PROGRAMS="bat fd fzf gcc git git-delta joshmedeski/sesh/sesh jesseduffield/lazydocker/lazydocker jesseduffield/lazygit/lazygit mise neovim ripgrep tldr tmux zoxide"
+BREW_PROGRAMS="bat eza fd fzf gcc git git-delta joshmedeski/sesh/sesh jesseduffield/lazydocker/lazydocker jesseduffield/lazygit/lazygit mise neovim ripgrep tldr tmux zoxide"
 if is_mac; then
   # MacOS only
   BREW_PROGRAMS+=" pngpaste silicon font-jetbrains-mono-nerd-font"
@@ -144,5 +144,4 @@ linkdotfile .config/lazydocker ~/.config/lazydocker
 if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   yecho "tmux plugin manager not found, installing..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  tmux source-file ~/.tmux.conf
 fi

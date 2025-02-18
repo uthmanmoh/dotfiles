@@ -424,6 +424,9 @@ set-option -g renumber-windows on
 # increase history size
 set -g history-limit 50000
 
+# Allow passthrough for things like image displays
+set -g allow-passthrough on
+
 # start with mouse mode enabled
 set -g mouse on
 # scroll by 1 line

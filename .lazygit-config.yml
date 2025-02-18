@@ -69,9 +69,7 @@ git:
     # displays the whole git graph by default in the commits panel (equivalent to passing the `--all` argument to `git log`)
     showWholeGraph: false
 os:
-  editPreset: "nvim"
-  edit: "nvim {{filename}}"
-  editAtLine: "nvim +{{line}} {{filename}}"
+  editPreset: "nvim-remote"
   open: "lemonade open {{filename}}"
   openLnk: "lemonade open {{link}}"
 refresher:

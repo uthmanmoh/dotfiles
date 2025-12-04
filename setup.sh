@@ -47,21 +47,31 @@ function install_brew {
 
 # function for linking dotfiles
 function linkdotfile {
-  file="$1"
-  ln_path="$2"
-  directory=$(dirname "$ln_path")
+  local file="$1"
+  local ln_path="$2"
+  local dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]:-${(%):-%x}}")" && pwd)"
+  local directory=$(dirname "$ln_path")
 
   if [ ! -d "$directory" ]; then
     wecho "$directory not found, creating..."
     mkdir -p "$directory"
   fi
 
-  if [ ! -e "$ln_path" ]; then
-    yecho "linking ~/dotfiles/$file -> $ln_path" >&2
-    ln -s ~/dotfiles/"$file" "$ln_path"
-  else
-    gecho "$ln_path already found, ignoring..." >&2
+  if [ -L "$ln_path" ]; then
+    if [ "$(readlink "$ln_path")" = "$dotfiles_dir/$file" ]; then
+      gecho "$ln_path already linked correctly" >&2
+      return
+    else
+      yecho "$ln_path is a symlink to wrong location, relinking..." >&2
+      rm "$ln_path"
+    fi
+  elif [ -e "$ln_path" ]; then
+    yecho "$ln_path exists, backing up to ${ln_path}.backup" >&2
+    mv "$ln_path" "${ln_path}.backup"
   fi
+
+  yecho "linking $dotfiles_dir/$file -> $ln_path" >&2
+  ln -s "$dotfiles_dir/$file" "$ln_path"
 }
 
 # Make sure homebrew is installed
@@ -91,7 +101,7 @@ bat cache --build
 # Install oh-my-zsh if not installed
 if [[ ! -d ~/.oh-my-zsh ]]; then
   yecho "oh-my-zsh not found, installing..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
 # Install powerlevel10k
@@ -145,3 +155,5 @@ if [[ ! -d ~/.tmux/plugins/tpm ]]; then
   yecho "tmux plugin manager not found, installing..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+gecho "Setup complete! Restart your terminal or run 'source ~/.zshrc' to apply changes."

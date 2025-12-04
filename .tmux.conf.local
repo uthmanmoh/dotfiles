@@ -432,6 +432,12 @@ set -g mouse on
 # scroll by 1 line
 bind-key -T copy-mode-vi WheelUpPane send-keys -X scroll-up
 bind-key -T copy-mode-vi WheelDownPane send-keys -X scroll-down
+# Mouse selection stays in copy-mode with selection highlighted
+bind-key -T copy-mode-vi MouseDragEnd1Pane send -X copy-selection-no-clear
+bind-key -T copy-mode-vi DoubleClick1Pane select-pane \; send -X select-word-no-clear
+bind-key -T copy-mode-vi TripleClick1Pane select-pane \; send -X select-line-no-clear
+# Single click clears selection and moves cursor
+bind-key -T copy-mode-vi MouseDown1Pane select-pane \; send -X clear-selection
 
 # Enable clipboard (need for neovim across ssh)
 set -g set-clipboard on
@@ -485,6 +491,16 @@ set -g status-position top
 # Fix neovim colors, from: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
 set -g default-terminal "tmux-256color"
 set -ag terminal-overrides ",xterm-256color:RGB"
+
+# Extended keys for better modifier support in neovim (Ctrl+Shift, etc.)
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
+
+# Additional vim-like copy mode bindings
+bind-key -T copy-mode-vi B send -X previous-space
+bind-key -T copy-mode-vi W send -X next-space
+bind-key -T copy-mode-vi E send -X next-space-end
+bind-key -T copy-mode-vi Y send -X copy-end-of-line
 
 # Sesh popup
 bind-key "T" run-shell "sesh connect \"$(

@@ -1,7 +1,4 @@
 [[session]]
-name = "Lemonade"
-startup_command = "lemonade server --allow 127.0.0.1"
-
-[[session]]
 name = "New Workspace"
 path = "~/workplace"
+startup_command = "tmux command-prompt -I \"#S\" \"rename-session '%%'\" && clear"

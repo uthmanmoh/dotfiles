@@ -69,6 +69,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Fix zsh-vi-mode bracketed paste issue (last char uppercase bug)
+function zvm_config() {
+  ZVM_READKEY_ENGINE=$ZVM_READKEY_ENGINE_NEX
+  ZVM_ESCAPE_KEYTIMEOUT=0.01
+}
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/

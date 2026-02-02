@@ -2,11 +2,15 @@
 let mapleader=" "
 
 """ Plugins  --------------------------------
-Plug 'tpope/vim-surround'           " ys, cs, ds, S
-Plug 'tpope/vim-commentary'         " [count]gc{motion}, o_gc, v_gc, gcc
-Plug 'vim-scripts/argtextobj.vim'   " argument text objects: aa, ia
-Plug 'kana/vim-textobj-entire'      " entire buffer text object: ae
-Plug "preservim/nerdtree"           " Let's you use vim shortcuts in the file tree
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set exchange
+set NERDTree           " Let's you use vim shortcuts in the file tree
 " Trying the new syntax
 Plug 'machakann/vim-highlightedyank'
 

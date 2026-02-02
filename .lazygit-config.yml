@@ -41,10 +41,10 @@ gui:
   showBottomLine: false
   commandLogSize: 8
 git:
-  paging:
-    useConfig: false
-    colorArg: always
-    pager: delta --paging=never --syntax-theme=Catppuccin-macchiato
+  pagers:
+    - useConfig: false
+      colorArg: always
+      pager: delta --paging=never --syntax-theme=Catppuccin-macchiato
   merging:
     # only applicable to unix users
     manualCommit: false
@@ -54,7 +54,6 @@ git:
   autoFetch: true
   autoRefresh: true
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --"
-  allBranchesLogCmd: "git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium"
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
   disableForcePushing: true
   parseEmoji: true
@@ -68,6 +67,8 @@ git:
     showGraph: "always"
     # displays the whole git graph by default in the commits panel (equivalent to passing the `--all` argument to `git log`)
     showWholeGraph: false
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
 os:
   editPreset: "nvim-remote"
   open: "lemonade open {{filename}}"
